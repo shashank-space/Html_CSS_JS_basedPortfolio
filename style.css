@@ -1,0 +1,537 @@
+/* =========================
+   GOOGLE FONTS
+========================= */ 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   CSS RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+
+    /* Color Palette */
+    --primary-color: #8018ac;
+    --secondary-color: #0f172a;
+    --accent-color: #06b6d4;
+    --background-color: #f8fafc;
+    --card-background-color: #ffffff;
+
+    --text-primary-color: #0f172a;
+    --text-secondary-color: #475569;
+    --text-light-color: #ffffff;
+
+    --border-color: #cbd5e1;
+
+    /* Gradients */
+    --main-gradient:
+        linear-gradient(135deg, #2f28ba, #7b42a6,#993db2);
+
+    /* Font */
+    --main-font-family: 'Poppins', sans-serif;
+
+    /* Shadows */
+    --card-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+
+    --hover-shadow:
+        0 15px 35px rgba(79, 70, 229, 0.2);
+
+    /* Border Radius */
+    --border-radius-small: 10px;
+    --border-radius-medium: 18px;
+
+    /* Animation */
+    --transition-speed: 0.3s;
+}
+
+/* =========================
+   BODY STYLING
+========================= */
+body {
+    font-family: var(--main-font-family);
+    background: var(--background-color);
+    color: var(--text-primary-color);
+    line-height: 1.7;
+}
+
+/* =========================
+   HEADER SECTION
+========================= */
+.portfolio-header {
+    background: var(--main-gradient);
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--card-shadow);
+}
+
+/* Navigation Layout */
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.portfolio-logo h1 {
+    color: var(--text-light-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Navigation Menu */
+.navigation-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+/* Navigation Links */
+.navigation-item a {
+    color: var(--text-light-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition-speed);
+}
+
+/* Underline Hover Effect */
+.navigation-item a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--text-light-color);
+    transition: var(--transition-speed);
+}
+
+.navigation-item a:hover::after {
+    width: 100%;
+}
+
+.navigation-item a:hover {
+    opacity: 0.8;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.portfolio-main-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* =========================
+   SECTION DESIGN
+========================= */
+section {
+    background: var(--card-background-color);
+    margin-bottom: 40px;
+    padding: 50px;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--card-shadow);
+
+    transition:
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Hover Card Effect */
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+/* Decorative Line */
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: var(--main-gradient);
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+    text-align: center;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--primary-color);
+    margin: 25px 0;
+
+    transition:
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Image Hover */
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 15px 35px rgba(79, 70, 229, 0.3);
+}
+
+/* About Text */
+.about-description h3 {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    font-weight: 400;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+.skills-list {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    list-style: none;
+}
+
+/* Skill Cards */
+.skill-item {
+    background: var(--main-gradient);
+    color: var(--text-light-color);
+    padding: 18px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition:
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Skill Hover */
+.skill-item:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.3);
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary-color);
+}
+
+/* Inputs & Textarea */
+.form-input,
+.form-textarea {
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    font-family: var(--main-font-family);
+    transition:
+        border-color var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Focus Effects */
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow:
+        0 0 10px rgba(79, 70, 229, 0.2);
+}
+
+/* Submit Button */
+.submit-button {
+    background: var(--main-gradient);
+    color: var(--text-light-color);
+    border: none;
+    padding: 16px;
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform var(--transition-speed),
+        opacity var(--transition-speed);
+}
+
+/* Button Hover */
+.submit-button:hover {
+    transform: translateY(-4px);
+    opacity: 0.9;
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--card-background-color);
+    border: 2px solid var(--border-color);
+    padding: 25px;
+    border-radius: var(--border-radius-medium);
+
+    transition:
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.2);
+}
+
+/* Project Title */
+.project-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Project Description */
+.project-description {
+    color: var(--text-secondary-color);
+    margin-bottom: 20px;
+}
+
+/* Project Button */
+.project-link {
+    display: inline-block;
+    background: var(--main-gradient);
+    color: var(--text-light-color);
+    padding: 10px 18px;
+    border-radius: var(--border-radius-small);
+    text-decoration: none;
+    font-weight: 500;
+
+    transition:
+        transform var(--transition-speed),
+        opacity var(--transition-speed);
+}
+
+/* Button Hover */
+.project-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Dark Mode Support */
+.dark-mode .project-card {
+    background-color: rgba(35, 35, 35, 0.395);
+    border: 1px solid white;
+}
+
+.dark-mode .project-description {
+    color: white;
+}
+
+/* Section Scroll Padding */
+#projects-section {
+    padding-top: 100px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.portfolio-footer {
+    background: var(--main-gradient);
+    color: var(--text-light-color);
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 60px;
+}
+
+/* Footer Text */
+.footer-text {
+    margin-bottom: 12px;
+}
+
+/* Footer Links */
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-speed);
+}
+
+.footer-link:hover {
+    color: var(--text-light-color);
+}
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 30px 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navigation-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navigation-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    /* Header */
+    .portfolio-header {
+        padding: 20px;
+    }
+
+    /* Main Content */
+    .portfolio-main-content {
+        width: 95%;
+    }
+
+    /* Sections */
+    section {
+        padding: 30px 20px;
+    }
+
+    /* Profile Image */
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Title */
+    .portfolio-logo h1 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+#about-section,
+#skills-section,
+#contact-section {
+    padding-top: 100px;
+}
+/* =========================
+   SIMPLE DARK MODE
+========================= */
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Change Section Background */
+.dark-mode section {
+     background-color: rgba(35, 35, 35, 0.395);
+    color: white;
+}
+
+/* Change All Text */
+.dark-mode h3,
+.dark-mode li,
+.dark-mode label {
+    color: white;
+}
+
+/* Form Fields */
+.dark-mode .form-input,
+.dark-mode .form-textarea {
+    background-color: rgb(39, 38, 38);
+    color: white;
+    border: 1px solid white;
+}
+
+/* Dark Mode Button */
+#dark-mode-button {
+    color: var(--text-light-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition-speed);
+    background: var(--main-gradient);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+/* Dark Mode Button Hover */
+#dark-mode-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FORM ERROR MESSAGE
+========================= */
+
+.error-message {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
